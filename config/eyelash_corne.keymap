@@ -55,46 +55,57 @@
 &kp TAB         &kp Q  &kp W  &kp E         &kp R  &kp T                                      &mmv MOVE_UP                     &kp Y  &kp U      &kp I          &kp O    &kp P     &kp BSPC
 &kp ESCAPE      &kp A  &kp S  &kp D         &kp F  &kp G                      &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp H  &kp J      &kp K          &kp L    &kp SEMI  &kp SQT
 &kp LEFT_SHIFT  &kp Z  &kp X  &kp C         &kp V  &kp B        &kp K_MUTE                    &mmv MOVE_DOWN                   &kp N  &kp M      &kp COMMA      &kp DOT  &kp FSLH  &kp ENTER
-                              &kp LEFT_ALT  &mo 1  &lt 3 SPACE                                                                 &mo 2  &kp RCTRL  &kp RIGHT_GUI
+                              &kp LEFT_ALT  &mo 3  &lt 1 SPACE                                                                 &mo 2  &kp RCTRL  &kp RIGHT_GUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
-        lower_layer {
+        Numbers {
             display-name = "NUMBER";
             bindings = <
-&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                    &trans             &kp N6     &kp N7  &kp N8  &kp N9  &kp N0           &kp BSPC
-&trans  &none   &none   &none   &none   &none             &trans  &mkp RCLK  &trans  &kp ASTRK  &kp N4  &kp N5  &kp N6  &kp PLUS         &kp KP_EQUAL
-&trans  &none   &none   &none   &trans  &none   &trans            &trans             &kp FSLH   &kp N1  &kp N2  &kp N3  &kp KP_SUBTRACT  &trans
-                        &trans  &trans  &trans                                       &trans     &trans  &trans
+&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                            &mmv MOVE_UP                     &kp N6     &kp N7  &kp N8  &kp N9  &kp N0           &kp BSPC
+&trans  &none   &none   &none   &none   &none             &mmv MOVE_LEFT  &mkp RCLK       &mmv MOVE_RIGHT  &kp ASTRK  &kp N4  &kp N5  &kp N6  &kp PLUS         &kp KP_EQUAL
+&trans  &none   &none   &none   &trans  &none   &trans                    &mmv MOVE_DOWN                   &kp FSLH   &kp N1  &kp N2  &kp N3  &kp KP_SUBTRACT  &trans
+                        &trans  &trans  &trans                                                             &kp SPACE  &trans  &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
         };
 
-        raise_layer {
+        Symbols {
             display-name = "SYMBOL";
             bindings = <
-&trans  &kp EXCL   &kp AT     &kp HASH   &kp DLLR        &kp PRCNT                           &trans             &kp CARET          &kp AMPS         &kp ASTRK  &kp LPAR   &kp RPAR  &kp BSPC
-&trans  &kp GRAVE  &kp TILDE  &kp MINUS  &kp LEFT_BRACE  &kp LEFT_BRACKET            &trans  &mkp RCLK  &trans  &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp PLUS   &kp UNDER  &kp BSLH  &kp DEL
-&trans  &none      &none      &none      &kp PIPE        &kp BACKSLASH     &trans            &trans             &kp SLASH          &kp EQUAL        &none      &none      &none     &trans
-                              &trans     &trans          &trans                                                 &trans             &trans           &trans
+&trans  &kp EXCL   &kp AT     &kp HASH   &kp DLLR        &kp PRCNT                           &trans          &kp CARET          &kp AMPS         &kp ASTRK  &kp LPAR   &kp RPAR  &kp EQUAL
+&trans  &kp GRAVE  &kp TILDE  &kp MINUS  &kp LEFT_BRACE  &kp LEFT_BRACKET            &trans  &to 4   &trans  &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp PLUS   &kp UNDER  &kp BSLH  &kp DEL
+&trans  &none      &none      &none      &kp PIPE        &kp BACKSLASH     &trans            &trans          &kp SLASH          &none            &none      &none      &none     &trans
+                              &trans     &trans          &trans                                              &trans             &trans           &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
         };
 
-        layer_3 {
+        Functions {
             display-name = "Fn";
             bindings = <
-&rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp F1  &kp F2   &kp F3   &kp F4                              &trans          &none     &kp PG_DN  &kp PG_UP  &none      &none     &kp DEL
-&rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &kp F5  &kp F6   &kp F7   &kp F8                      &trans  &trans  &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp HOME  &kp END
-&rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &kp F9  &kp F10  &kp F11  &kp F12  &rgb_ug RGB_TOG            &trans          &trans    &none      &none      &none      &none     &kp PAUSE_BREAK
-                                          &trans   &trans   &trans                                              &trans    &trans     &trans
+&none  &none  &kp F1  &kp F2   &kp F3   &kp F4                              &trans          &none     &kp PG_DN  &kp PG_UP  &none      &none     &kp DEL
+&none  &none  &kp F5  &kp F6   &kp F7   &kp F8                      &trans  &trans  &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp HOME  &kp END
+&none  &none  &kp F9  &kp F10  &kp F11  &kp F12  &rgb_ug RGB_TOG            &trans          &trans    &none      &none      &none      &none     &kp PAUSE_BREAK
+                      &trans   &trans   &trans                                              &trans    &trans     &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
+        };
+
+        RGB {
+            bindings = <
+&rgb_ug RGB_TOG  &none  &none  &none  &none  &none                  &none         &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &rgb_ug RGB_EFF  &none
+&none            &none  &none  &none  &none  &none           &none  &to 0  &none  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &rgb_ug RGB_EFR  &none
+&none            &none  &none  &none  &none  &none  &none           &none         &none            &none            &none            &none            &none            &none
+                               &none  &none  &none                                &none            &none            &none
+            >;
+
+            label = "RGB";
         };
     };
 };
